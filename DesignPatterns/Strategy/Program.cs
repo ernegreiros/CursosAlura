@@ -10,6 +10,7 @@ namespace Strategy
 
             ICMS icms = new ICMS();
             ISS iss = new ISS();
+            ICCC iccc = new ICCC();
 
             CalculadorDeImposto calculadorDeImposto = new CalculadorDeImposto();
 
@@ -17,6 +18,8 @@ namespace Strategy
             calculadorDeImposto.CalcularImposto(orcamento, icms);
             Console.WriteLine("Calculando ISS");
             calculadorDeImposto.CalcularImposto(orcamento, iss);
+            Console.WriteLine("Calculando ICCC");
+            calculadorDeImposto.CalcularImposto(orcamento, iccc);
 
             Console.ReadLine();
         }
