@@ -1,6 +1,6 @@
 ﻿using System;
 
-namespace Strategy
+namespace Strategy_Imposto
 {
     class Program
     {

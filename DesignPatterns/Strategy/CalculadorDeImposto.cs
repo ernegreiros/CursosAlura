@@ -1,8 +1,6 @@
 ﻿using System;
-using System.Collections.Generic;
-using System.Text;
 
-namespace Strategy
+namespace Strategy_Imposto
 {
     public class CalculadorDeImposto
     {
