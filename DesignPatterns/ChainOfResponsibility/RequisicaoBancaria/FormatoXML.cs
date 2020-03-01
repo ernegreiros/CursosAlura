@@ -21,7 +21,14 @@ namespace ChainOfResponsibility.RequisicaoBancaria
             }
             else
             {
-                ProximoFormato.Formatar(conta, requisicao);
+                try
+                {
+                    ProximoFormato.Formatar(conta, requisicao);
+                }
+                catch (NullReferenceException)
+                {
+                    Console.WriteLine("");
+                }
             }
         }
     }

@@ -4,8 +4,7 @@
     {
         public void Formatar(Conta conta, Requisicao requisicao)
         {
-            SemFormato semFormato = new SemFormato();
-            FormatoPorcento formatoPorcento = new FormatoPorcento(semFormato);
+            FormatoPorcento formatoPorcento = new FormatoPorcento(null);
             FormatoCSV formatoCsv = new FormatoCSV(formatoPorcento);
             FormatoXML formatoXml = new FormatoXML(formatoCsv);
 
