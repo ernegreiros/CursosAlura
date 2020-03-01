@@ -1,8 +1,4 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Text;
-
-namespace Strategy.Strategy_Investimento
+﻿namespace Strategy.Strategy_Investimento
 {
     public class ContaBancaria
     {
