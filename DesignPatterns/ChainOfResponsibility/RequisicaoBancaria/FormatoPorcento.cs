@@ -6,7 +6,12 @@ namespace ChainOfResponsibility.RequisicaoBancaria
 {
     public class FormatoPorcento: IFormato
     {
-        public IFormato ProximoFormato { get; set; }
+        public IFormato ProximoFormato { get; private set; }
+
+        public FormatoPorcento(IFormato proximoFormato)
+        {
+            this.ProximoFormato = proximoFormato;
+        }
 
         public void Formatar(Conta conta, Requisicao requisicao)
         {
