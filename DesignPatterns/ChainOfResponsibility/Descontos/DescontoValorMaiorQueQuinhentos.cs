@@ -1,6 +1,6 @@
 ﻿namespace ChainOfResponsibility.Descontos
 {
-    public class DescontoValorMaiorQueQuinhentoscs : IDesconto
+    public class DescontoValorMaiorQueQuinhentos : IDesconto
     {
         public IDesconto ProximoDesconto { get; set; }
 

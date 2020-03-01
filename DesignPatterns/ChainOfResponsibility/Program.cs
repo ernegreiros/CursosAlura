@@ -28,20 +28,28 @@ namespace ChainOfResponsibility
             Orcamento orcamento3 = new Orcamento();
             orcamento3.AdicionaItem(new Item("Balde de Pipoca", 30.00));
 
+            Orcamento orcamento4 = new Orcamento();
+            orcamento4.AdicionaItem(new Item("Lapis", 30.00));
+            orcamento4.AdicionaItem(new Item("Caneta", 30.00));
+
             CalculadorDeDesconto calculadora = new CalculadorDeDesconto();
+            double desconto;
 
             Console.WriteLine("Calculando Desconto Orçamento 1: ");
-            var desconto1 = calculadora.CalculaDesconto(orcamento1);
-            Console.WriteLine("Valor total: " + orcamento1.Valor + "\nValor Desconto: " + desconto1);
+            desconto = calculadora.CalculaDesconto(orcamento1);
+            Console.WriteLine("Valor total: " + orcamento1.Valor + "\nValor Desconto: " + desconto);
 
             Console.WriteLine("Calculando Desconto Orçamento 2: ");
-            var desconto2 = calculadora.CalculaDesconto(orcamento2);
-            Console.WriteLine("Valor total: " + orcamento2.Valor + "\nValor Desconto: " + desconto2);
+            desconto = calculadora.CalculaDesconto(orcamento2);
+            Console.WriteLine("Valor total: " + orcamento2.Valor + "\nValor Desconto: " + desconto);
 
             Console.WriteLine("Calculando Desconto Orçamento 3: ");
-            var desconto3 = calculadora.CalculaDesconto(orcamento3);
-            Console.WriteLine("Valor total: " + orcamento3.Valor + "\nValor Desconto: " + desconto3);
+            desconto = calculadora.CalculaDesconto(orcamento3);
+            Console.WriteLine("Valor total: " + orcamento3.Valor + "\nValor Desconto: " + desconto);
 
+            Console.WriteLine("Calculando Desconto Orçamento 4: ");
+            desconto = calculadora.CalculaDesconto(orcamento4);
+            Console.WriteLine("Valor total: " + orcamento4.Valor + "\nValor Desconto: " + desconto);
         }
     }
 }

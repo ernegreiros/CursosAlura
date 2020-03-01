@@ -8,14 +8,16 @@ namespace ChainOfResponsibility.Descontos
     {
         public double CalculaDesconto(Orcamento orcamento)
         {
-            DescontoMaisDeCincoItens descCincoItens = new DescontoMaisDeCincoItens();
-            DescontoValorMaiorQueQuinhentoscs descQuinhentos = new DescontoValorMaiorQueQuinhentoscs();
+            DescontoMaisDeCincoItens descontoCincoItens = new DescontoMaisDeCincoItens();
+            DescontoValorMaiorQueQuinhentos descontoQuinhentos = new DescontoValorMaiorQueQuinhentos();
+            DescontoVendaCasada descontoVendaCasada = new DescontoVendaCasada();
             SemDesconto semDesconto = new SemDesconto();
 
-            descCincoItens.ProximoDesconto = descQuinhentos;
-            descQuinhentos.ProximoDesconto = semDesconto;
+            descontoCincoItens.ProximoDesconto  = descontoQuinhentos;
+            descontoQuinhentos.ProximoDesconto  = descontoVendaCasada;
+            descontoVendaCasada.ProximoDesconto = semDesconto;
 
-            return descCincoItens.Desconta(orcamento);
+            return descontoCincoItens.Desconta(orcamento);
         }
     }
 }
