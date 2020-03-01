@@ -1,4 +1,5 @@
 ﻿using ChainOfResponsibility.Descontos;
+using ChainOfResponsibility.RequisicaoBancaria;
 using System;
 
 namespace ChainOfResponsibility
@@ -8,7 +9,29 @@ namespace ChainOfResponsibility
         static void Main(string[] args)
         {
             CalculaDescontos();
+            Console.WriteLine("\n\n-------------------------------------\n\n");
+            FormataConta();
             Console.ReadLine();
+        }
+
+        private static void FormataConta()
+        {
+            Conta conta = new Conta("Joao", 1000.0);
+            
+            Requisicao requisicaoXML = new Requisicao(Formato.XML);
+            Requisicao requisicaoCSV = new Requisicao(Formato.CSV);
+            Requisicao requisicaoPorcento = new Requisicao(Formato.PORCENTO);
+
+            FormatadorDeConta formatador = new FormatadorDeConta();
+
+            Console.WriteLine("Requisitando Formato XML...");
+            formatador.Formatar(conta, requisicaoXML);
+
+            Console.WriteLine("Requisitando Formato CSV...");
+            formatador.Formatar(conta, requisicaoCSV);
+
+            Console.WriteLine("Requisitando Formato Porcentagem...");
+            formatador.Formatar(conta, requisicaoPorcento);
         }
 
         private static void CalculaDescontos()
